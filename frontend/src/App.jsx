@@ -25,6 +25,7 @@ function App() {
   const [language, setLanguage] = useState("");
   const [copied, setCopied] = useState(false);
 
+  const BASE_URL = import.meta.env.VITE_BASE_URL;
   const handleScrape = async () => {
     setError("");
     setContent("");
@@ -32,7 +33,7 @@ function App() {
     setAnalytics(null);
     setLoading(true);
     try {
-      const res = await axios.get("http://localhost:8000/scrape", {
+      const res = await axios.get(`${BASE_URL}/scrape`, {
         params: { url },
       });
       setContent(res.data.content);
