@@ -14,7 +14,7 @@ import CodeSmellChart from "./analytics/CodeSmellChart";
 import KeywordChart from "./analytics/KeywordChart";
 import LinesofCodePieChart from "./analytics/LinesofCodePieChart";
 import ExtractedContent from "./analytics/ExtractedContent";
-import FunctionLengthChart from "./analytics/FunctionLengthChart";
+import AnalyticsIcon from "@mui/icons-material/Analytics";
 
 function App() {
   const [url, setUrl] = useState("");
@@ -47,7 +47,19 @@ function App() {
   return (
     <Container maxWidth="lg" sx={{ mt: 5, mb: 8 }}>
       <Typography variant="h4" gutterBottom align="center">
-        🐙 GitHub File Scraper
+        <Box
+          sx={{
+            display: "inline-flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}>
+          <img
+            src="https://img.icons8.com/?size=100&id=LTV2516kZliP&format=png&color=000000"
+            alt="logo"
+            style={{ width: 40, height: 40, marginRight: 8 }}
+          />
+          GitHub File Scraper
+        </Box>
       </Typography>
 
       <Box display="flex" gap={2} alignItems="center" mb={3}>
@@ -66,7 +78,7 @@ function App() {
           color="success"
           onClick={handleScrape}
           disabled={loading || !url}>
-          {loading ? <CircularProgress size={24} color="inherit" /> : "GO"}
+          {loading ? <CircularProgress size={24} color="inherit" /> : "Scrape"}
         </Button>
       </Box>
 
