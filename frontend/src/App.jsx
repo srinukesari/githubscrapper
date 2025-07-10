@@ -14,7 +14,6 @@ import CodeSmellChart from "./analytics/CodeSmellChart";
 import KeywordChart from "./analytics/KeywordChart";
 import LinesofCodePieChart from "./analytics/LinesofCodePieChart";
 import ExtractedContent from "./analytics/ExtractedContent";
-import AnalyticsIcon from "@mui/icons-material/Analytics";
 
 function App() {
   const [url, setUrl] = useState("");
@@ -59,14 +58,14 @@ function App() {
             alt="logo"
             style={{ width: 40, height: 40, marginRight: 8 }}
           />
-          GitHub File Scraper
+          github File Scraper
         </Box>
       </Typography>
 
       <Box display="flex" gap={2} alignItems="center" mb={3}>
         <TextField
           fullWidth
-          label="GitHub File URL"
+          label="github File URL"
           variant="outlined"
           value={url}
           onChange={(e) => setUrl(e.target.value)}
@@ -91,6 +90,7 @@ function App() {
 
       {content && analytics && (
         <>
+          <Divider sx={{ my: 4 }} />
           <Box
             display="flex"
             flexDirection={{ xs: "column", md: "row" }}
